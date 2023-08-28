@@ -27,7 +27,7 @@ export interface Dish {
 }
 
 export interface AddonCat {
-    addon_category: string
+    addonCat: boolean
 }
 
 export interface IsDishAvailable {

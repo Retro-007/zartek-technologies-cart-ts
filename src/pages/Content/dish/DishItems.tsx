@@ -65,12 +65,11 @@ const DishItems = ({
                         </div>
 
                         <CartButton
-                            dish_id={dish_id}
-                            dish_Availability={dish_Availability}
-                        />
+                            id={dish_id}
+                            dish_Availability={dish_Availability} />
 
                         <IsCustomizableItem
-                            addonCat={addonCat}
+                            addonCat={addonCat?.length > 0 ? true : false}
                         />
 
                         <IsAvailableItem

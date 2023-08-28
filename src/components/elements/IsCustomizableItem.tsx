@@ -5,7 +5,7 @@ const IsCustomizableItem = ({ addonCat }: AddonCat) => {
 
     return (
         <React.Fragment>
-            {addonCat && addonCat?.length > 0 ?
+            {addonCat ?
                 <div>
                     <span className='text-danger fs-7'>Customaization Available</span>
                 </div>

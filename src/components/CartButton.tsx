@@ -2,10 +2,10 @@ import { Button, ButtonGroup } from 'react-bootstrap'
 import React from 'react'
 import { BsPlus } from 'react-icons/bs'
 import { BiMinus } from 'react-icons/bi';
-import { CartItem } from '../helpers/cart/ProviderTypes';
+import { CartItemProps } from '../helpers/cart/ProviderTypes';
 import { useCart } from '../context/CartContext';
 
-const CartButton = ({ dish_Availability, dish_id }: CartItem) => {
+const CartButton = ({ dish_Availability, id }: CartItemProps) => {
 
 
     const {
@@ -15,7 +15,7 @@ const CartButton = ({ dish_Availability, dish_id }: CartItem) => {
     } = useCart()
 
 
-    const quantity = getCartItemQuantity(dish_id);
+    const quantity = getCartItemQuantity(id);
     return (
         <React.Fragment>
 
@@ -31,7 +31,7 @@ const CartButton = ({ dish_Availability, dish_id }: CartItem) => {
                                     <Button
                                         className='b-r-group-left'
                                         variant="success"
-                                        onClick={() => handleMinusItemCart(dish_id)}
+                                        onClick={() => handleMinusItemCart(id)}
                                     >
                                         <BiMinus />
                                     </Button>
@@ -41,7 +41,7 @@ const CartButton = ({ dish_Availability, dish_id }: CartItem) => {
                                     <Button
                                         className='b-r-group-right'
                                         variant="success"
-                                        onClick={() => handleAddItemCart(dish_id)}
+                                        onClick={() => handleAddItemCart(id)}
                                     >
                                         <BsPlus />
                                     </Button>
@@ -53,7 +53,7 @@ const CartButton = ({ dish_Availability, dish_id }: CartItem) => {
                                 <Button
                                     className='b-r-10 fs-7'
                                     variant="success"
-                                    onClick={() => handleAddItemCart(dish_id)}
+                                    onClick={() => handleAddItemCart(id)}
                                 >
                                     + Add To Cart
 
